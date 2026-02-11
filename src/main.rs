@@ -125,7 +125,11 @@ fn main() -> Result<()> {
     let default_iface = default_net::get_default_interface().map_err(|e| anyhow::anyhow!(e)).context("Could not find default interface")?;
     
     let interface = interfaces.iter()
-        .find(|iface| (iface.name.starts_with("en") || iface.name.starts_with("eth") || iface.name.starts_with("wlan")) && !iface.ipv4.is_empty())
+        .find(|iface| {
+            let n = &iface.name;
+            (n.starts_with("en") || n.starts_with("eth") || n.starts_with("wlan") || n.starts_with("ens") || n.starts_with("enp") || n.starts_with("eno")) 
+            && !iface.ipv4.is_empty()
+        })
         .unwrap_or(&default_iface);
 
     let gateway = default_net::get_default_gateway().map_err(|e| anyhow::anyhow!(e)).context("Could not find default gateway")?;
