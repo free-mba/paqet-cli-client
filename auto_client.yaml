@@ -1,0 +1,23 @@
+role: client
+log:
+  level: info
+socks5:
+- listen: 127.0.0.1:1080
+  username: ''
+  password: ''
+network:
+  interface: en1
+  ipv4:
+    addr: 192.168.1.91:0
+    router_mac: d4:1:c3:a6:36:71
+  ipv6:
+    addr: '[fe80::14fd:9cd9:3906:962e]:0'
+    router_mac: d4:01:c3:a6:36:71
+server:
+  addr: 45.141.148.77:8443
+transport:
+  protocol: kcp
+  conn: 1
+  kcp:
+    mode: fast
+    key: RkCrATRTO0uAQQwCYBs26JDBaE1fzq2d
