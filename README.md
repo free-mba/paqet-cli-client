@@ -4,7 +4,7 @@ Automated network discovery and configuration generator for Paqet.
 
 ## How to use
 
-1. Go to the [Releases](https://github.com/USER/REPO/releases) page.
+1. Go to the [Releases](https://github.com/free-mba/paqet-cli-client/releases/) page.
 2. Download the binary for your OS.
 3. Run with sudo:
    ```bash
